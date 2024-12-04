@@ -1,6 +1,24 @@
 import { getPosts } from "@/lib/utils";
 import Link from "next/link";
 
+const META_DESCRIPTION =
+  "A Blog all things web development and software engineering. Career stuff, personal projects, interesting tech, philosphiacl musings, and more.";
+
+export const metadata = {
+  title: "devGalaktika | Blog",
+  description: META_DESCRIPTION,
+  openGraph: {
+    title: "devGalaktika | Blog",
+    description: META_DESCRIPTION,
+    images: ["/logo.png"],
+  },
+  twitter: {
+    title: "devGalaktika | Blog",
+    description: META_DESCRIPTION,
+    images: ["/logo.png"],
+  },
+};
+
 export default function BlogPage() {
   const blogPosts = getPosts({});
   return (

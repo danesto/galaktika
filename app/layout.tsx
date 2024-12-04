@@ -8,6 +8,7 @@ import { ThemeProvider } from "next-themes";
 import ThemeSwitcher from "@/components/theme-switcher";
 import { DividerHorizontalIcon } from "@radix-ui/react-icons";
 import "./globals.css";
+import Image from "next/image";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -26,9 +27,23 @@ const robotoFont = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "galaktikadev",
+  title: "devGalaktika",
   description:
-    "Galaktikadev is a perosnal portfolio website of Danilo Stojanovic where I mostly write about web development and software engineering and projects I created. It contains useful information about engineering and software development, especially frontend engineering and tech like React, Next.js, TypeScript, and more.",
+    "devGalaktika is a personal portfolio website of Danilo Stojanovic where I mostly write about web development and software engineering and projects I created. It contains useful information about engineering and software development, especially frontend engineering and tech like React, Next.js, TypeScript, and more.",
+  openGraph: {
+    title: "devGalaktika",
+    description:
+      "devGalaktika is a personal portfolio website of Danilo Stojanovic where I mostly write about web development and software engineering and projects I created. It contains useful information about engineering and software development, especially frontend engineering and tech like React, Next.js, TypeScript, and more.",
+    images: ["/logo.png"],
+  },
+  twitter: {
+    card: "summary",
+    images: ["/logo.png"],
+    title: "devGalaktika",
+    description:
+      "devGalaktika is a personal portfolio website of Danilo Stojanovic where I mostly write about web development and software engineering and projects I created. It contains useful information about engineering and software development, especially frontend engineering and tech like React, Next.js, TypeScript, and more.",
+    creator: "@milisavko",
+  },
 };
 
 export default function RootLayout({
@@ -51,8 +66,17 @@ export default function RootLayout({
           <div className="min-h-screen w-full max-w-[860px] grid md:grid-rows-[50px_1fr_20px] grid-rows-[150px_1fr_20px] grid-cols-12 items-center justify-start md:gap-y-10 gap-y-4 px-3 py-6">
             <header className="flex md:items-center gap-10 col-span-12 md:flex-row flex-col items-start relative">
               <h1 className="font-extrabold text-xl">
-                <Link href="/" className="text-foreground">
-                  galaktikadev
+                <Link
+                  href="/"
+                  className="text-foreground flex items-center gap-2"
+                >
+                  <Image
+                    src="/logo.png"
+                    alt="devGalaktika"
+                    width="25"
+                    height="25"
+                  />
+                  devGalaktika
                 </Link>
               </h1>
               <Navigation

@@ -35,7 +35,7 @@ const getSinglePost = (postId: string) => {
 
   return {
     title: matterResult.data.title,
-    date: matterResult.data.date,
+    date: matterResult.data.createdAt,
     category: matterResult.data.category,
     description: matterResult.data.description,
     content: matterResult.content,
