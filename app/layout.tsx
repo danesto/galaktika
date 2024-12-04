@@ -24,6 +24,7 @@ const geistMono = localFont({
 const robotoFont = Roboto({
   weight: ["400", "100", "500", "700", "300", "900"],
   variable: "--font-roboto",
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
