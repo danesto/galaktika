@@ -1,9 +1,10 @@
+import { Metadata } from "next";
 import ProjectsMdx from "./_projects.mdx";
 
 const META_DESCRIPTION =
   "Projects I created, worked on, or contributed to. A collection of personal projects, open-source contributions, and other work I did.";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "devGalaktika | Blog",
   description: META_DESCRIPTION,
   openGraph: {

@@ -7,8 +7,8 @@ import { ThemeProvider } from "next-themes";
 
 import ThemeSwitcher from "@/components/theme-switcher";
 import { DividerHorizontalIcon } from "@radix-ui/react-icons";
-import "./globals.css";
 import Image from "next/image";
+import "./globals.css";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -118,6 +118,14 @@ export default function RootLayout({
                 rel="noopener"
               >
                 GitHub
+              </Link>
+              <DividerHorizontalIcon />
+              <Link
+                href="/DaniloStojanovicCV.pdf"
+                target="_blank"
+                rel="noopener"
+              >
+                Resume
               </Link>
             </footer>
           </div>
