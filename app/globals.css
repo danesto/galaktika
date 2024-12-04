@@ -4,18 +4,37 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  /* --foreground: #171717; */
+  --link-color: theme('colors.blue.600');   
+  --foreground:  theme('backgroundColor.gray.800');
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
+    /* --background: #0a0a0a; */
+    /* --background: theme('backgroundColor.gray.800');
+    --foreground: #ededed; */
+  /* } */
+/* } */
+
+
+.dark {
     --background: #0a0a0a;
+    --background: theme('backgroundColor.gray.800');
     --foreground: #ededed;
-  }
+    --link-color: theme('colors.blue.300');   
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+
+  a {
+    color: var(--link-color);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }

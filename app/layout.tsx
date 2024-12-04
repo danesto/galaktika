@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Roboto } from "next/font/google";
+import { Navigation } from "@/components/navigation";
+import Link from "next/link";
+import { ThemeProvider } from "next-themes";
+
 import "./globals.css";
+import ThemeSwitcher from "@/components/theme-switcher";
+import { DividerHorizontalIcon } from "@radix-ui/react-icons";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -11,6 +18,11 @@ const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
   weight: "100 900",
+});
+
+const robotoFont = Roboto({
+  weight: ["400", "100", "500", "700", "300"],
+  variable: "--font-roboto",
 });
 
 export const metadata: Metadata = {
@@ -24,11 +36,64 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${robotoFont.variable} font-sans antialiased
+         flex justify-center
+        `}
       >
-        {children}
+        <ThemeProvider
+          enableSystem={false}
+          defaultTheme="dark"
+          attribute="class"
+        >
+          <div className="min-h-screen w-full max-w-[860px] grid grid-rows-[50px_1fr_20px] grid-cols-12 items-center justify-start gap-y-10 px-3 py-6">
+            <header className="flex items-center gap-10 col-span-12">
+              <h1 className="font-extrabold text-xl">
+                <Link href="/" className="text-foreground">
+                  galaktikadev
+                </Link>
+              </h1>
+              <Navigation
+                items={[
+                  {
+                    label: "Home",
+                    href: "/",
+                  },
+                  {
+                    label: "Projects",
+                    href: "/projects",
+                  },
+                  {
+                    label: "Blogging and Stuff",
+                    href: "/blog",
+                  },
+                ]}
+              />
+              <ThemeSwitcher />
+            </header>
+            <main className="col-span-12 h-full">{children}</main>
+            <footer className="flex items-center col-span-12 gap-1 justify-center">
+              <Link href="mailto:dane.sto@gmail.com">Email</Link>
+              <DividerHorizontalIcon />
+              <Link
+                href="https://www.linkedin.com/in/danilo-stojanovic-61143a32"
+                target="_blank"
+                rel="noopener"
+              >
+                LinkedIn
+              </Link>
+              <DividerHorizontalIcon />
+              <Link
+                href="https://github.com/danesto/"
+                target="_blank"
+                rel="noopener"
+              >
+                GitHub
+              </Link>
+            </footer>
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );
