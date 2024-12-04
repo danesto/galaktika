@@ -48,8 +48,8 @@ export default function RootLayout({
           defaultTheme="dark"
           attribute="class"
         >
-          <div className="min-h-screen w-full max-w-[860px] grid grid-rows-[50px_1fr_20px] grid-cols-12 items-center justify-start gap-y-10 px-3 py-6">
-            <header className="flex items-center gap-10 col-span-12">
+          <div className="min-h-screen w-full max-w-[860px] grid md:grid-rows-[50px_1fr_20px] grid-rows-[150px_1fr_20px] grid-cols-12 items-center justify-start md:gap-y-10 gap-y-4 px-3 py-6">
+            <header className="flex md:items-center gap-10 col-span-12 md:flex-row flex-col items-start relative">
               <h1 className="font-extrabold text-xl">
                 <Link href="/" className="text-foreground">
                   galaktikadev
@@ -71,7 +71,9 @@ export default function RootLayout({
                   },
                 ]}
               />
-              <ThemeSwitcher />
+              <div className="absolute right-0">
+                <ThemeSwitcher />
+              </div>
             </header>
             <main className="col-span-12 h-full">{children}</main>
             <footer className="flex items-center col-span-12 gap-1 justify-center">

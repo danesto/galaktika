@@ -11,12 +11,15 @@ const BlogPostPage = async ({ params }: PageProps) => {
 
   return (
     <section className={`font-[Verdana]`}>
-      <h1 className="mb-10 font-bold text-3xl">{mdxSource.title}</h1>
+      <h1 className="mb-10 font-bold md:text-3xl text-xl">{mdxSource.title}</h1>
 
-      <article className="prose prose-slate dark:prose-invert">
-        <h2 className="!text-base mb-10">{mdxSource.description}</h2>
+      <article className="prose prose-slate prose-sm md:prose-base dark:prose-invert">
+        <h2 className="md:!text-base !text-sm mb-10 italic !font-normal">
+          {mdxSource.description}
+        </h2>
         <hr />
         <MDXRemote
+          options={{}}
           source={mdxSource.content}
           components={{
             mark: (props) => (

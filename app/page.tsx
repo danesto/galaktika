@@ -15,7 +15,7 @@ export default function Home() {
 
       <section className="col-span-12 flex flex-col gap-y-4">
         <h2 className="col-span-12 font-semibold text-lg">
-          Latest blog scribbles
+          Some stuff I wrote recently:
         </h2>
 
         <ul className="col-span-12 flex flex-col gap-y-3 text-lg">
