@@ -1,13 +1,9 @@
 import Link from "next/link";
 import { getPosts } from "@/lib/utils";
-import { useMemo } from "react";
 
 export default function Home() {
-  const blogPosts = useMemo(() => {
-    return getPosts({});
-  }, []);
+  const blogPosts = getPosts({});
 
-  console.log(blogPosts);
   return (
     <div className="grid grid-cols-12 gap-y-6 col-span-12">
       <section className="col-span-12 text-lg">
