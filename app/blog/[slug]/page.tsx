@@ -21,7 +21,7 @@ export async function generateMetadata({
       images: ["/logo.png"],
     },
     twitter: {
-      card: "app",
+      card: "summary",
       title: title,
       description: description,
       images: ["/logo.png"],
