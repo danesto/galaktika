@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import TailwindTypography from "@tailwindcss/typography";
 
 export default {
   content: [
@@ -14,9 +15,10 @@ export default {
       },
       fontFamily: {
         sans: ["var(--font-roboto)"],
+        blog: ["var(--font-jost)"],
       },
     },
   },
-  plugins: [],
+  plugins: [TailwindTypography],
   darkMode: "selector",
 } satisfies Config;

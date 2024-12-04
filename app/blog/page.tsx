@@ -10,11 +10,11 @@ export default function BlogPage() {
   return (
     <div>
       <h2 className="font-bold text-xl">Blog Scribbles</h2>
-      <ul className="col-span-12 flex flex-col gap-y-3 text-lg list-disc list-inside">
+      <ul className="col-span-12 flex flex-col gap-y-3 text-lg list-disc list-inside mt-4">
         {blogPosts.map((post) => {
           return (
             <li key={post.title}>
-              <Link href={post.id}>{post.title}</Link>
+              <Link href={`/blog/${post.id}`}>{post.title}</Link>
             </li>
           );
         })}

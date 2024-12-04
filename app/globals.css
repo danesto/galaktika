@@ -5,24 +5,24 @@
 :root {
   --background: #ffffff;
   /* --foreground: #171717; */
-  --link-color: theme('colors.blue.600');   
-  --foreground:  theme('backgroundColor.gray.800');
+  --link-color: theme("colors.blue.600");
+  --foreground: theme("backgroundColor.gray.800");
+  scroll-behavior: smooth;
 }
 
 /* @media (prefers-color-scheme: dark) {
   :root {
     /* --background: #0a0a0a; */
-    /* --background: theme('backgroundColor.gray.800');
+/* --background: theme('backgroundColor.gray.800');
     --foreground: #ededed; */
-  /* } */
+/* } */
 /* } */
 
-
 .dark {
-    --background: #0a0a0a;
-    --background: theme('backgroundColor.gray.800');
-    --foreground: #ededed;
-    --link-color: theme('colors.blue.300');   
+  --background: #0a0a0a;
+  --background: theme("backgroundColor.gray.800");
+  --foreground: #ededed;
+  --link-color: theme("colors.blue.300");
 }
 
 body {
