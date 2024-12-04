@@ -14,6 +14,7 @@ export const metadata = {
     images: ["/logo.png"],
   },
   twitter: {
+    card: "app",
     title: META_TITLE,
     description: META_DESCRIPTION,
     images: ["/logo.png"],

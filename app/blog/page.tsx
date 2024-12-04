@@ -13,6 +13,7 @@ export const metadata = {
     images: ["/logo.png"],
   },
   twitter: {
+    card: "app",
     title: "devGalaktika | Blog",
     description: META_DESCRIPTION,
     images: ["/logo.png"],

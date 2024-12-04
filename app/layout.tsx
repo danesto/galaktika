@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     images: ["/logo.png"],
   },
   twitter: {
-    card: "summary",
+    card: "app",
     images: ["/logo.png"],
     title: "devGalaktika",
     description:
