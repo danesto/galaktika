@@ -16,7 +16,16 @@ const BlogPostPage = async ({ params }: PageProps) => {
       <article className="prose prose-slate dark:prose-invert">
         <h2 className="!text-base mb-10">{mdxSource.description}</h2>
         <hr />
-        <MDXRemote source={mdxSource.content} />
+        <MDXRemote
+          source={mdxSource.content}
+          components={{
+            mark: (props) => (
+              <mark {...props} className="!bg-red-100">
+                {props.children}
+              </mark>
+            ),
+          }}
+        />
       </article>
     </section>
   );
