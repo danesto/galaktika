@@ -22,7 +22,7 @@ export default function Home() {
           {blogPosts.map((post) => {
             return (
               <li key={post.title}>
-                <Link href={post.id}>{post.title}</Link>
+                <Link href={`/blog/${post.id}`}>{post.title}</Link>
               </li>
             );
           })}
