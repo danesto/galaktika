@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "path";
 import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
+import { cache } from "react";
 
 const getPosts = ({ blogDirectory = path.join(process.cwd(), `articles`) }) => {
   const fileNames = fs.readdirSync(blogDirectory);
@@ -26,7 +27,7 @@ const getPosts = ({ blogDirectory = path.join(process.cwd(), `articles`) }) => {
   return allBlogPosts;
 };
 
-const getSinglePost = (postId: string) => {
+const getSinglePost = cache((postId: string) => {
   const blogPost = path.join(process.cwd(), `articles/${postId}.mdx`);
 
   const fileContents = fs.readFileSync(blogPost, "utf-8");
@@ -42,7 +43,7 @@ const getSinglePost = (postId: string) => {
     slug: postId,
     previewImage: matterResult.data.previewImage,
   };
-};
+});
 
 // Used if MDXRemote is rendered on the client side as it needs to be serialized first
 const getMdxPageContentCSR = async (postUrl: string) => {

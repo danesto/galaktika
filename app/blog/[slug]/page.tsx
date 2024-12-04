@@ -38,8 +38,8 @@ const BlogPostPage = async ({ params }: PageProps) => {
       <span className="self-end mb-4">{mdxSource.date}</span>
       <h1 className="mb-10 font-bold md:text-3xl text-xl">{mdxSource.title}</h1>
 
-      <article className="prose prose-slate prose-sm md:prose-base dark:prose-invert">
-        <h2 className="md:!text-base !text-sm mb-10 italic !font-normal">
+      <article className="prose prose-slate prose-base md:prose-base dark:prose-invert">
+        <h2 className="md:!text-base !text-base mb-10 italic !font-normal">
           {mdxSource.description}
         </h2>
         <hr />
