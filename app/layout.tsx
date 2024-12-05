@@ -1,26 +1,14 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import { Roboto } from "next/font/google";
-import { Navigation } from "@/components/navigation";
-import Link from "next/link";
+import { Navigation, ThemeSwitcher, Footer } from "@/components";
+
 import { ThemeProvider } from "next-themes";
 
-import ThemeSwitcher from "@/components/theme-switcher";
-import { DividerHorizontalIcon } from "@radix-ui/react-icons";
-import Image from "next/image";
 import { CSPostHogProvider } from "@/lib/post-hog-analytics-provider";
-import "./globals.css";
+import { Logo } from "@/components/logo";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+import { NAVIGATION_ITEMS } from "@/lib/constants";
+import "./globals.css";
 
 const robotoFont = Roboto({
   weight: ["400", "100", "500", "700", "300", "900"],
@@ -56,9 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${robotoFont.variable} font-sans antialiased
-         flex justify-center
-        `}
+        className={`${robotoFont.variable} font-sans antialiased flex justify-center`}
       >
         <ThemeProvider
           enableSystem={false}
@@ -69,67 +55,19 @@ export default function RootLayout({
             <div className="min-h-screen w-full max-w-[860px] grid md:grid-rows-[50px_1fr_20px] grid-rows-[150px_1fr_20px] grid-cols-12 items-center justify-start md:gap-y-10 gap-y-4 px-3 py-6">
               <header className="flex md:items-center gap-10 col-span-12 md:flex-row flex-col items-start relative">
                 <h1 className="font-extrabold text-xl">
-                  <Link
-                    href="/"
-                    className="text-foreground flex items-center gap-2"
-                  >
-                    <Image
-                      src="/logo.png"
-                      alt="devGalaktika"
-                      width="25"
-                      height="25"
-                    />
-                    devGalaktika
-                  </Link>
+                  <Logo />
                 </h1>
-                <Navigation
-                  items={[
-                    {
-                      label: "Home",
-                      href: "/",
-                    },
-                    {
-                      label: "Projects",
-                      href: "/projects",
-                    },
-                    {
-                      label: "Blogging and Stuff",
-                      href: "/blog",
-                    },
-                  ]}
-                />
+
+                <Navigation items={NAVIGATION_ITEMS} />
+
                 <div className="absolute right-0">
                   <ThemeSwitcher />
                 </div>
               </header>
+
               <main className="col-span-12 h-full">{children}</main>
-              <footer className="flex items-center col-span-12 gap-1 justify-center">
-                <Link href="mailto:dane.sto@gmail.com">Email</Link>
-                <DividerHorizontalIcon />
-                <Link
-                  href="https://www.linkedin.com/in/danilo-stojanovic-61143a32"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  LinkedIn
-                </Link>
-                <DividerHorizontalIcon />
-                <Link
-                  href="https://github.com/danesto/"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  GitHub
-                </Link>
-                <DividerHorizontalIcon />
-                <Link
-                  href="/DaniloStojanovicCV.pdf"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  Resume
-                </Link>
-              </footer>
+
+              <Footer className="flex items-center col-span-12 gap-1 justify-center" />
             </div>
           </CSPostHogProvider>
         </ThemeProvider>
