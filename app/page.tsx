@@ -1,24 +1,9 @@
 import { ArticlesList } from "@/components";
+import { STATIC_METADATA } from "@/lib/metadata";
 import { getPosts } from "@/lib/utils";
 
-const META_TITLE = "devGalaktika";
-const META_DESCRIPTION =
-  "devGalaktika is a perosnal portfolio website of Danilo Stojanovic where I mostly write about web development and software engineering and projects I created. It contains useful information about engineering and software development, especially frontend engineering and tech like React, Next.js, TypeScript, and more.";
-
 export const metadata = {
-  title: META_TITLE,
-  description: META_DESCRIPTION,
-  openGraph: {
-    title: META_TITLE,
-    description: META_DESCRIPTION,
-    images: ["/logo.png"],
-  },
-  twitter: {
-    card: "summary",
-    title: META_TITLE,
-    description: META_DESCRIPTION,
-    images: ["/logo.png"],
-  },
+  ...STATIC_METADATA.home,
 };
 
 export default function Home() {
@@ -28,8 +13,8 @@ export default function Home() {
     <div className="grid grid-cols-12 gap-y-6 col-span-12">
       <section className="col-span-12 text-lg flex flex-col gap-2">
         <p>
-          <strong>Hello world! </strong> Welcome to{" "}
-          <strong>devGalaktika!</strong> My own universe consistent of personal
+          <strong>Hello world! </strong> Welcome to{""}
+          <strong>Galaktika!</strong> My own universe consistent of personal
           projects, achivements, blog scribbles. Here I describe some of my
           previous projects, and write about things that interest me.
         </p>
@@ -48,7 +33,7 @@ export default function Home() {
         <ArticlesList
           articles={articles}
           maxCount={5}
-          className="col-span-12 flex flex-col gap-y-3 text-lg"
+          className="col-span-12 flex flex-col gap-y-3 text-lg pb-8"
         />
       </section>
     </div>

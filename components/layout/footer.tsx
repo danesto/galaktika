@@ -12,7 +12,7 @@ type FooterProps = {
 
 const Footer = ({ className, items = [] }: FooterProps) => {
   return (
-    <footer className={`${className}`}>
+    <footer className={`flex-wrap ${className}`}>
       {items.map((item, index) => (
         <div key={item.label} className="flex items-center gap-1">
           <Link

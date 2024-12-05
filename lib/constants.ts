@@ -34,6 +34,10 @@ const CONTACT_LINKS = [
     // Replace with your own resume inside the public folder
     href: "/path/my-resume.pdf",
   },
+  {
+    label: "Create your own Blog",
+    href: "https://devgalaktika.vercel.app/",
+  },
 ];
 
 export { NAVIGATION_ITEMS, CONTACT_LINKS };
