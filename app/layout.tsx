@@ -1,3 +1,5 @@
+export const dynamic = "force-static";
+
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import { Navigation, ThemeSwitcher, Footer } from "@/components";

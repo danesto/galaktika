@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { ArticlesList } from "@/components";
 import { getPosts } from "@/lib/utils";
 
 const META_TITLE = "devGalaktika";
@@ -22,7 +22,7 @@ export const metadata = {
 };
 
 export default function Home() {
-  const blogPosts = getPosts();
+  const articles = getPosts();
 
   return (
     <div className="grid grid-cols-12 gap-y-6 col-span-12">
@@ -45,15 +45,11 @@ export default function Home() {
           Some stuff I wrote recently:
         </h2>
 
-        <ul className="col-span-12 flex flex-col gap-y-3 text-lg">
-          {blogPosts.map((post) => {
-            return (
-              <li key={post.title}>
-                <Link href={`/blog/${post.id}`}>{post.title}</Link>
-              </li>
-            );
-          })}
-        </ul>
+        <ArticlesList
+          articles={articles}
+          maxCount={5}
+          className="col-span-12 flex flex-col gap-y-3 text-lg"
+        />
       </section>
     </div>
   );

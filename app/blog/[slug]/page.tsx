@@ -1,12 +1,19 @@
-export const dynamic = "force-static";
-
-import { getSinglePost } from "@/lib/utils";
+import { getPosts, getSinglePost } from "@/lib/utils";
 import { Metadata } from "next";
 import { MDXRemote } from "next-mdx-remote/rsc";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
 };
+
+// Since our blog posts are read from the file system, we can generate the static paths for them at build time.
+export async function generateStaticParams() {
+  const posts = getPosts();
+
+  return posts.map((post) => ({
+    slug: post.id,
+  }));
+}
 
 export async function generateMetadata({
   params,
