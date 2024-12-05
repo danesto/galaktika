@@ -1,7 +1,9 @@
 ## Welcome to devGalaktika
 
+![alt text](https://github.com/danesto/galaktika/public/logo.png?raw=true)
+
 Galaktika is a next.js boilerplate for creating a simple and minimalistic portfolio/blog
-with focus on performance and experience over design and features. It is mostly inspired by [Bear Blog](https://bearblog.dev/) and [Hacker News](https://news.ycombinator.com/) to provide basic functionalities focues on content.
+with focus on performance and experience over design and features. It is mostly inspired by [Bear Blog](https://bearblog.dev/) and [Hacker News](https://news.ycombinator.com/) to provide basic functionalities focused on content.
 
 It is a great starting point for developers who just want to create a personal portfolio or
 blog with the focus on content by providing you with an oportunity to start publishing your content right away.
