@@ -21,7 +21,7 @@ export const metadata = {
 };
 
 export default function BlogPage() {
-  const blogPosts = getPosts({});
+  const blogPosts = getPosts();
   return (
     <div>
       <h2 className="font-bold text-xl">Some stuff I wrote:</h2>

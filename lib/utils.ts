@@ -2,9 +2,17 @@ import fs from "node:fs";
 import path from "path";
 import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
-import { cache } from "react";
 
-const getPosts = ({ blogDirectory = path.join(process.cwd(), `articles`) }) => {
+/**
+ *
+ * @param blogDirectory - The directory where the blog posts are stored. Use: `path.join(process.cwd(), articles_folder)` syntax to get the correct path
+ * defaults to: `path.join(process.cwd(), articles)`
+ * @returns An array of blog posts with the following properties: `id, title, createdAt, description`.
+ * @NOTES
+ * You could optinally change return statement of the function to return more properties depending on what metadata you have in your markdown files.
+ * **Post id returned is the filename without the `.mdx` extension**
+ */
+const getPosts = (blogDirectory = path.join(process.cwd(), `articles`)) => {
   const fileNames = fs.readdirSync(blogDirectory);
 
   const allBlogPosts = fileNames.map((post) => {
@@ -27,7 +35,12 @@ const getPosts = ({ blogDirectory = path.join(process.cwd(), `articles`) }) => {
   return allBlogPosts;
 };
 
-const getSinglePost = cache((postId: string) => {
+/**
+ *
+ * @param postId - The id of the blog post
+ * @returns The blog post with the following properties: `title, date, category, description, content, previewImage`
+ */
+const getSinglePost = (postId: string) => {
   const blogPost = path.join(process.cwd(), `articles/${postId}.mdx`);
 
   const fileContents = fs.readFileSync(blogPost, "utf-8");
@@ -37,15 +50,14 @@ const getSinglePost = cache((postId: string) => {
   return {
     title: matterResult.data.title,
     date: matterResult.data.createdAt,
-    category: matterResult.data.category,
     description: matterResult.data.description,
     content: matterResult.content,
-    slug: postId,
-    previewImage: matterResult.data.previewImage,
   };
-});
+};
 
-// Used if MDXRemote is rendered on the client side as it needs to be serialized first
+/**
+ * Use this function if MDXRemote is rendered on the client side as it needs to be serialized first
+ */
 const getMdxPageContentCSR = async (postUrl: string) => {
   const blogPost = path.join(process.cwd(), `articles/${postUrl}.mdx`);
 

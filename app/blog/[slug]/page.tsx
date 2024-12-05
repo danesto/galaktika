@@ -1,3 +1,5 @@
+export const dynamic = "force-static";
+
 import { getSinglePost } from "@/lib/utils";
 import { Metadata } from "next";
 import { MDXRemote } from "next-mdx-remote/rsc";

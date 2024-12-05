@@ -22,7 +22,7 @@ export const metadata = {
 };
 
 export default function Home() {
-  const blogPosts = getPosts({});
+  const blogPosts = getPosts();
 
   return (
     <div className="grid grid-cols-12 gap-y-6 col-span-12">
