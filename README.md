@@ -1,6 +1,11 @@
-## Welcome to devGalaktika
+<div align="center">
+    <a href="https://devgalaktika.vercel.app/">
+        <img src="https://github.com/danesto/galaktika/blob/main/public/logo.png?raw=true" />
+    </a>
+    <h1>Galaktika</h1>
+</div>
 
-![alt text](https://github.com/danesto/galaktika/blob/main/public/logo.png?raw=true)
+## Welcome to Galaktika
 
 Galaktika is a next.js boilerplate for creating a simple and minimalistic portfolio/blog
 with focus on performance and experience over design and features. It is mostly inspired by [Bear Blog](https://bearblog.dev/) and [Hacker News](https://news.ycombinator.com/) to provide basic functionalities focused on content.
