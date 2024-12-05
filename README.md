@@ -2,7 +2,6 @@
     <a href="https://devgalaktika.vercel.app/">
         <img src="https://github.com/danesto/galaktika/blob/main/public/logo.png?raw=true" />
     </a>
-    <h1>Galaktika</h1>
 </div>
 
 ## Welcome to Galaktika
