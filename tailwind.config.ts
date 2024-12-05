@@ -15,7 +15,6 @@ export default {
       },
       fontFamily: {
         sans: ["var(--font-roboto)"],
-        blog: ["var(--font-jost)"],
       },
     },
   },
