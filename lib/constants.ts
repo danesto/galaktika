@@ -1,3 +1,4 @@
+// Define your navigation items here
 const NAVIGATION_ITEMS = [
   {
     label: "Home",
@@ -13,4 +14,26 @@ const NAVIGATION_ITEMS = [
   },
 ];
 
-export { NAVIGATION_ITEMS };
+// Replace with your own values
+const CONTACT_LINKS = [
+  {
+    label: "Email",
+    href: "mailto:your-email@mail.com",
+    skipNewTab: true,
+  },
+  {
+    label: "LinkedIn",
+    href: "url-path-to-your-linkedin-profile",
+  },
+  {
+    label: "GitHub",
+    href: "url-path-to-your-github-profile",
+  },
+  {
+    label: "My Resume",
+    // Replace with your own resume inside the public folder
+    href: "/path/my-resume.pdf",
+  },
+];
+
+export { NAVIGATION_ITEMS, CONTACT_LINKS };

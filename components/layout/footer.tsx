@@ -2,29 +2,29 @@ import { DividerHorizontalIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 
 type FooterProps = {
+  items?: {
+    label: string;
+    href: string;
+    skipNewTab?: boolean;
+  }[];
   className?: string;
 };
 
-const Footer = ({ className }: FooterProps) => {
+const Footer = ({ className, items = [] }: FooterProps) => {
   return (
     <footer className={`${className}`}>
-      <Link href="mailto:dane.sto@gmail.com">Email</Link>
-      <DividerHorizontalIcon />
-      <Link
-        href="https://www.linkedin.com/in/danilo-stojanovic-61143a32"
-        target="_blank"
-        rel="noopener"
-      >
-        LinkedIn
-      </Link>
-      <DividerHorizontalIcon />
-      <Link href="https://github.com/danesto/" target="_blank" rel="noopener">
-        GitHub
-      </Link>
-      <DividerHorizontalIcon />
-      <Link href="/DaniloStojanovicCV.pdf" target="_blank" rel="noopener">
-        Resume
-      </Link>
+      {items.map((item, index) => (
+        <div key={item.label} className="flex items-center gap-1">
+          <Link
+            href={item.href}
+            target={item.skipNewTab ? "_self" : "_blank"}
+            rel={item.skipNewTab ? undefined : "noopener"}
+          >
+            {item.label}
+          </Link>
+          {index < items.length - 1 && <DividerHorizontalIcon />}
+        </div>
+      ))}
     </footer>
   );
 };

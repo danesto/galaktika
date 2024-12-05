@@ -7,7 +7,7 @@ import { ThemeProvider } from "next-themes";
 import { CSPostHogProvider } from "@/lib/post-hog-analytics-provider";
 import { Logo } from "@/components/logo";
 
-import { NAVIGATION_ITEMS } from "@/lib/constants";
+import { CONTACT_LINKS, NAVIGATION_ITEMS } from "@/lib/constants";
 import "./globals.css";
 
 const robotoFont = Roboto({
@@ -67,7 +67,10 @@ export default function RootLayout({
 
               <main className="col-span-12 h-full">{children}</main>
 
-              <Footer className="flex items-center col-span-12 gap-1 justify-center" />
+              <Footer
+                className="flex items-center col-span-12 gap-1 justify-center"
+                items={CONTACT_LINKS}
+              />
             </div>
           </CSPostHogProvider>
         </ThemeProvider>
