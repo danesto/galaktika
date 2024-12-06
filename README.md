@@ -27,7 +27,7 @@ Once you get the access, just fork the repo and look around;
 
 ### Pages
 
-Galaktika comes preconfigures with 3 pages. Since it is using next.js' app router, all pages are defined within the app/ directory.
+Galaktika comes preconfigured with 3 pages. Since it is using next.js' app router, all pages are defined within the app/ directory.
 Those 3 pages are: `home`, `blog` and `projects` page. You can update and change the structure of each depending on your preferences.
 They contain basic SEO metadata imported from `/util/metadata` directory. `home` and `blog` are using to `ArticlesList` comoponent to display
 articles, while `projects` page is importing the content from the `_projects.mdx` file within the same directory. Top level `not-found` page is also
@@ -35,15 +35,24 @@ present within the app folder and it is just displaying a basic 404 message.
 
 ### Updating the Logo
 
-...
+Logo Component lives within `components/logo.tsx`. It's currently displaying Galaktika logo, just replace the image/text with whatever your
+want.
 
 ### Articles
 
-...
+Articles are `mdx` files located in the root `articles` directory.
+
+_Name the files using lowercase and dashes_ name of the files also represents the id of that articles and the slug.
+Single article page `[slug]` within the blog folder renders each content using MDXRemote component from `next-mdx-remote/rsc` package. It is rendered
+on server side that's why the component is import from the `rsc` directory, if you want to tweak or change something around how your MDX is displayed
+or add custom components you can do it by changing the MDXRemote component options, see more: [next-mdx-remote repo](https://github.com/hashicorp/next-mdx-remote)
 
 ### Custom MDX components
 
-...
+If you are directly importing the mdx file content into the `jsx` like it's done for `projects` page then you can modify and add components to the
+`mdx-components.tsx` file in the root directory, it's the official described in
+[next.js' documentation](https://nextjs.org/docs/app/api-reference/file-conventions/mdx-components).
+If you however want to add custom components to the `[slug]` page that uses `MDXRemote` just refer to [next-mdx-remote repo](https://github.com/hashicorp/next-mdx-remote)
 
 ### Post utils
 
@@ -55,16 +64,21 @@ present within the app folder and it is just displaying a basic 404 message.
 
 ### Dark Theme
 
-...
+ThemeSwitcher component is included and located inside the `components` folder. It uses `next-theme` to render a provider that's controlling
+a dark/light theme with TailwindCSS [see here for more details:](https://www.npmjs.com/package/next-themes). Default theme is set to dark.
+Targetting the dark theme only when styling is done via tailwind's dark mode selector `dark:some-css-rule`
 
 ### Changing the Theme colors
 
-....
+You can change the appearance and background/foreground colors of the app just by changing the `--foreground` and `--background` css variables inside the globals.css file
 
 ### Favicon
 
-...
+Favicon is the image located in the root of app directory, just replace it with your own.
 
 ### Dependencies
 
-...
+- MDX
+- next-themes
+- tailwindcss
+  ...
