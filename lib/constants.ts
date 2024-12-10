@@ -36,7 +36,7 @@ const CONTACT_LINKS = [
   },
   {
     label: "Create your own Blog",
-    href: "https://devgalaktika.vercel.app/",
+    href: "https://github.com/danesto/galaktika",
   },
 ];
 
