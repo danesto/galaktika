@@ -32,7 +32,11 @@ const getPosts = (blogDirectory = path.join(process.cwd(), `articles`)) => {
     };
   });
 
-  return allBlogPosts;
+  const sortedPosts = allBlogPosts.sort(
+    (a, b) => b.createdAt.getTime() - a.createdAt.getTime()
+  );
+
+  return sortedPosts;
 };
 
 /**
