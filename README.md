@@ -60,7 +60,10 @@ If you however want to add custom components to the `[slug]` page that uses `MDX
 
 ### Analytics
 
-...
+Galaktika has post hog analytics setup.
+To enable it just register an account with posthog and add the env variables listed in env.example.
+post-hog-anlytics-provider.tsx is configured to work with variables defined in your env.
+**docs is still updating**
 
 ### Dark Theme
 
