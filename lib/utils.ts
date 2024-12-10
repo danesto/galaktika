@@ -29,11 +29,12 @@ const getPosts = (blogDirectory = path.join(process.cwd(), `articles`)) => {
       title: matterResult.data.title,
       createdAt: matterResult.data.createdAt,
       description: matterResult.data.description,
+      date: new Date(matterResult.data.createdAt),
     };
   });
 
   const sortedPosts = allBlogPosts.sort(
-    (a, b) => b.createdAt.getTime() - a.createdAt.getTime()
+    (a, b) => b.date.getTime() - a.date.getTime()
   );
 
   return sortedPosts;
