@@ -4,6 +4,8 @@
     </a>
 </div>
 
+**Fork the repository to get started.**
+
 ## Welcome to Galaktika
 
 Galaktika is a next.js boilerplate for creating a simple and minimalistic portfolio/blog
